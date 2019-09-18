@@ -60,20 +60,19 @@ public class Parser {
         int i = 0;
         int j = 0;
         
-        if(frase.contains("\""));{
-            while(j<frase.length()){
-                j = frase.indexOf("\"", i+1);
-                if(j>i && j<=frase.length()){
-                    asubs.add(frase.substring (i,j));
-                }
+        while(j<frase.length()){
+        	j = frase.indexOf("\"", i+1);
+        	if(j>i && j<=frase.length()){
+        		asubs.add(frase.substring (i,j));
+        	}
                 
-                if(j == -1){
-                    asubs.add(frase.substring(i, frase.length()));
-                    j = frase.length();
-                }
-                i = j;
+        	if(j == -1){
+        		asubs.add(frase.substring(i, frase.length()));
+        		j = frase.length();
             }
+        	i = j;
         }
+        
         
         i=0;
         while(i<asubs.size()){
